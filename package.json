@@ -43,7 +43,7 @@
     ]
   },
   "dependencies": {
-    "caz": "0.1.3"
+    "caz": "0.2.1"
   },
   "devDependencies": {
     "jest": "26.4.1",
