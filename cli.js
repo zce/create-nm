@@ -9,7 +9,4 @@ const template = __dirname
 const project = process.argv[2]
 
 // scaffolding by caz...
-caz(template, project).catch(e => {
-  // error handling
-  console.error(e)
-})
+caz(template, project).catch(console.error)

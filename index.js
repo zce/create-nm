@@ -1,7 +1,7 @@
 // @ts-check
 
 // !!! Sharing the dependencies of caz
-module.paths = module.parent.paths
+module.paths = require.main.paths
 
 const path = require('path')
 const chalk = require('chalk')
@@ -74,10 +74,12 @@ module.exports = {
       message: 'Choose the features you need',
       instructions: false,
       choices: [
+        { title: 'Automatic test', value: 'test', selected: true },
+        { title: 'TypeScript', value: 'typescript' },
+        // { title: 'Rollup', value: 'rollup' },
         { title: 'CLI Program', value: 'cli' },
         { title: 'Additional docs', value: 'docs' },
-        { title: 'Additional examples', value: 'example' },
-        { title: 'Automatic test', value: 'test', selected: true }
+        { title: 'Additional examples', value: 'example' }
       ]
     },
     {
@@ -92,27 +94,29 @@ module.exports = {
       message: 'Package manager',
       hint: ' ',
       choices: [
-        { title: 'npm', value: 'npm' },
-        { title: 'yarn', value: 'yarn' },
-        { title: 'pnpm', value: 'pnpm' }
+        { value: 'npm' },
+        { value: 'yarn' },
+        { value: 'pnpm' }
       ]
     }
   ],
   filters: {
-    /** @param {{ features: string[] }} answers */
-    'bin/**': answers => answers.features.includes('cli'),
-    /** @param {{ features: string[] }} answers */
-    'docs/**': answers => answers.features.includes('docs'),
-    /** @param {{ features: string[] }} answers */
-    'example/**': answers => answers.features.includes('example'),
-    /** @param {{ features: string[] }} answers */
-    'test/**': answers => answers.features.includes('test'),
-    /** @param {{ features: string[] }} answers */
-    '.travis.yml': answers => answers.features.includes('test')
+    'docs/**': ({ features }) => features.includes('docs'),
+    'bin/**': ({ features }) => features.includes('cli'),
+    'lib/cli.js': ({ features }) => features.includes('cli') && !features.includes('typescript'),
+    'src/cli.ts': ({ features }) => features.includes('cli') && features.includes('typescript'),
+    'example/*.js': ({ features }) => features.includes('example') && !features.includes('typescript'),
+    'example/*.ts': ({ features }) => features.includes('example') && features.includes('typescript'),
+    'test/*.js': ({ features }) => features.includes('test') && !features.includes('typescript'),
+    'test/*.ts': ({ features }) => features.includes('test') && features.includes('typescript'),
+    'lib/index.js': ({ features }) => !features.includes('typescript'),
+    'src/index.ts': ({ features }) => features.includes('typescript'),
+    'tsconfig.eslint.json': ({ features }) => features.includes('typescript'),
+    'tsconfig.json': ({ features }) => features.includes('typescript')
   },
   install: 'npm',
   init: true,
-  prepare: async ctx => {
+  setup: async ctx => {
     ctx.config.install = ctx.answers.install && ctx.answers.pm
   },
   complete: async ctx => {
@@ -125,7 +129,12 @@ module.exports = {
     if (ctx.config.install === false) {
       console.log(chalk`  $ {cyan npm install} {gray # or yarn}`)
     }
-    console.log(chalk`  $ {cyan ${ctx.config.install ? ctx.config.install : 'npm'} test}`)
+    if (ctx.answers.features.includes('typescript')) {
+      console.log(chalk`  $ {cyan ${ctx.config.install ? ctx.config.install : 'npm'} run build}`)
+    }
+    if (ctx.answers.features.includes('test')) {
+      console.log(chalk`  $ {cyan ${ctx.config.install ? ctx.config.install : 'npm'} test}`)
+    }
     console.log('\nHappy hacking :)\n')
   }
 }

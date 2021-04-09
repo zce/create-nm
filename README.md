@@ -1,5 +1,6 @@
 # @zce/create-nm
 
+[![Build Status][actions-img]][actions-url]
 [![NPM Downloads][downloads-img]][downloads-url]
 [![NPM Version][version-img]][version-url]
 [![License][license-img]][license-url]
@@ -63,6 +64,8 @@ $ create-nm <project>
 
 
 
+[actions-img]: https://img.shields.io/github/workflow/status/zce/create-nm/CI
+[actions-url]: https://github.com/zce/create-nm/actions
 [downloads-img]: https://img.shields.io/npm/dm/@zce/create-nm
 [downloads-url]: https://npmjs.org/package/@zce/create-nm
 [version-img]: https://img.shields.io/npm/v/@zce/create-nm

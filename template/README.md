@@ -1,10 +1,10 @@
 # <%= name %>
 <% if (features.includes('test')) { %>
-[![Build Status][travis-img]][travis-url]
+[![Build Status][actions-img]][actions-url]
 [![Coverage Status][codecov-img]][codecov-url]<% } %>
+[![License][license-img]][license-url]
 [![NPM Downloads][downloads-img]][downloads-url]
 [![NPM Version][version-img]][version-url]
-[![License][license-img]][license-url]
 [![Dependency Status][dependency-img]][dependency-url]
 [![devDependency Status][devdependency-img]][devdependency-url]
 [![Code Style][style-img]][style-url]
@@ -69,7 +69,7 @@ $ yarn global add <%= name %>
 
 ```shell
 $ <%= name %> --help
-demo v0.1.0
+<%= name %>/0.1.0
 
 Usage:
   $ <%= name %> <input>
@@ -89,6 +89,10 @@ Examples:
   $ <%= name %> w --host zce.me
 ```<% } %>
 
+## Related
+
+- [zce/caz](https://github.com/zce/caz) - A simple yet powerful template-based Scaffolding tools.
+
 ## Contributing
 
 1. **Fork** it on GitHub!
@@ -106,16 +110,16 @@ Examples:
 
 
 <% if (features.includes('test')) { %>
-[travis-img]: https://img.shields.io/travis/<%= github %>/<%= name %>
-[travis-url]: https://travis-ci.org/<%= github %>/<%= name %>
+[actions-img]: https://img.shields.io/github/workflow/status/<%= github %>/<%= name %>/CI
+[actions-url]: https://github.com/<%= github %>/<%= name %>/actions
 [codecov-img]: https://img.shields.io/codecov/c/github/<%= github %>/<%= name %>
 [codecov-url]: https://codecov.io/gh/<%= github %>/<%= name %><% } %>
-[downloads-img]: https://img.shields.io/npm/dm/<%= name %>
-[downloads-url]: https://npmjs.org/package/<%= name %>
-[version-img]: https://img.shields.io/npm/v/<%= name %>
-[version-url]: https://npmjs.org/package/<%= name %>
 [license-img]: https://img.shields.io/github/license/<%= github %>/<%= name %>
 [license-url]: https://github.com/<%= github %>/<%= name %>/blob/master/LICENSE
+[downloads-img]: https://img.shields.io/npm/dm/<%= name %>
+[downloads-url]: https://npm.im/<%= name %>
+[version-img]: https://img.shields.io/npm/v/<%= name %>
+[version-url]: https://npm.im/<%= name %>
 [dependency-img]: https://img.shields.io/david/<%= github %>/<%= name %>
 [dependency-url]: https://david-dm.org/<%= github %>/<%= name %>
 [devdependency-img]: https://img.shields.io/david/dev/<%= github %>/<%= name %>
