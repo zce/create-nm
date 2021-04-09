@@ -55,7 +55,7 @@ test('maximal', async () => {
       'docs',
       'example'
     ],
-    true,
+    false,
     'npm'
   ])
 
