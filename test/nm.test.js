@@ -49,8 +49,11 @@ test('maximal', async () => {
     'MIT',
     'zce',
     [
-      'feature1',
-      'feature2'
+      'test',
+      'typescript',
+      'cli',
+      'docs',
+      'example'
     ],
     true,
     'npm'
