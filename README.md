@@ -8,9 +8,11 @@
 [![devDependency Status][devdependency-img]][devdependency-url]
 [![Code Style][style-img]][style-url]
 
-> A scaffolding tool for generating node modules.
+> A scaffolding tool for creating node modules.
 
 ## Usage
+
+Prerequisites: [Node.js](https://nodejs.org) (>= 12.10 required, >= 14.17 preferred), [npm](https://www.npmjs.com) (>= 6.x) or [yarn](https://yarnpkg.com) (>= 1.22) and [Git](https://git-scm.com).
 
 Use npm:
 
