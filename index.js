@@ -116,6 +116,11 @@ module.exports = {
   setup: async ctx => {
     ctx.config.install = ctx.answers.install && ctx.answers.pm
   },
+  prepare: async ctx => {
+    // patch .gitignore filename
+    const gitignore = ctx.files.find(i => i.path.includes('gitignore'))
+    gitignore.path = gitignore.path.replace('gitignore', '.gitignore')
+  },
   complete: async ctx => {
     console.clear()
     console.log(chalk`Created a new project in {cyan ${ctx.project}} by the {blue ${ctx.template}} template.\n`)
