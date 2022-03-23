@@ -16,7 +16,8 @@
   "main": "index.js",
   "bin": "cli.js",
   "files": [
-    "template"
+    "template",
+    "template/.gitignore"
   ],
   "scripts": {
     "test": "standard --fix && jest"
