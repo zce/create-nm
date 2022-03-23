@@ -1,6 +1,6 @@
 {
   "name": "@zce/create-nm",
-  "version": "0.4.0",
+  "version": "1.0.0-alpha.0",
   "description": "A scaffolding tools for creating node modules.",
   "keywords": [
     "module",
