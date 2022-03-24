@@ -73,7 +73,7 @@ $ create-nm <project>
 [version-url]: https://npm.im/@zce/create-nm
 [license-img]: https://img.shields.io/github/license/zce/create-nm
 [license-url]: https://github.com/zce/create-nm/blob/master/LICENSE
-[dependency-img]: https://img.shields.io/librariesio/release/github/zce/create-nm
+[dependency-img]: https://img.shields.io/librariesio/github/zce/create-nm
 [dependency-url]: https://github.com/zce/create-nm
 [style-img]: https://img.shields.io/badge/code_style-standard-brightgreen
 [style-url]: https://standardjs.com
