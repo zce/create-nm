@@ -5,7 +5,6 @@
 [![NPM Version][version-img]][version-url]
 [![License][license-img]][license-url]
 [![Dependency Status][dependency-img]][dependency-url]
-[![devDependency Status][devdependency-img]][devdependency-url]
 [![Code Style][style-img]][style-url]
 
 > A scaffolding tool for creating node modules.
@@ -69,14 +68,12 @@ $ create-nm <project>
 [actions-img]: https://img.shields.io/github/workflow/status/zce/create-nm/CI
 [actions-url]: https://github.com/zce/create-nm/actions
 [downloads-img]: https://img.shields.io/npm/dm/@zce/create-nm
-[downloads-url]: https://npmjs.org/package/@zce/create-nm
+[downloads-url]: https://npm.im/@zce/create-nm
 [version-img]: https://img.shields.io/npm/v/@zce/create-nm
-[version-url]: https://npmjs.org/package/@zce/create-nm
+[version-url]: https://npm.im/@zce/create-nm
 [license-img]: https://img.shields.io/github/license/zce/create-nm
 [license-url]: https://github.com/zce/create-nm/blob/master/LICENSE
-[dependency-img]: https://img.shields.io/david/zce/create-nm
-[dependency-url]: https://david-dm.org/zce/create-nm
-[devdependency-img]: https://img.shields.io/david/dev/zce/create-nm
-[devdependency-url]: https://david-dm.org/zce/create-nm?type=dev
+[dependency-img]: https://img.shields.io/librariesio/release/github/zce/create-nm
+[dependency-url]: https://github.com/zce/create-nm
 [style-img]: https://img.shields.io/badge/code_style-standard-brightgreen
 [style-url]: https://standardjs.com
